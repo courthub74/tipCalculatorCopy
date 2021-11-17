@@ -107,3 +107,63 @@ header img {
     padding: 2.5rem;
 }
 
+.calculator-container {
+    background: honeydew;
+    border-radius: 25px 25px 0 0;
+    width: 375px;
+    margin: 0 auto;
+    padding-bottom: 1.8rem;
+}
+
+.inputs-container {
+    margin: 0 2rem;
+    position: relative;
+}
+
+/* utility class? */
+h1,
+h2,
+h3 {
+    font-size: 16px;
+    padding: 2rem 0 .5rem 0;
+}
+
+/* component class? */
+#bill,
+#num-people {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: var(--lighter-grayish-cyan);
+    display: block;
+    width: 100%;
+    height: 48px;
+    text-align: right;
+    padding-right: 1rem;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+#bill:focus, #num-people:focus {
+    border: 2px solid var(--strong-cyan);
+}
+
+.icon-dollar,
+.icon-person {
+    position: relative;
+    top: -32px;
+    left: 20px;
+}
+
+button {
+    width: 146px;
+    height: 48px;
+    background: var(--very-dark-cyan);
+    border-radius: 5px;
+    font-size: 24px;
+    text-align: center;
+    color: var(--white);
+    border: none;
+    margin-bottom: 1rem;
+}
+
