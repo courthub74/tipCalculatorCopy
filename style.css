@@ -167,3 +167,159 @@ button {
     margin-bottom: 1rem;
 }
 
+.percent-button:hover {
+    cursor: pointer;
+    background: #9FE8DF;
+}
+
+.clicked {
+    background: #26C2AE;
+    color: #00474B
+}
+
+#custom {
+    width: 146px;
+    height: 48px;
+    border: none;
+    background: var(--lighter-grayish-cyan);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 24px;
+    color: var(--very-dark-cyan);
+    outline: none;
+}
+
+#custom:hover, #bill:hover, #num-people:hover {
+    cursor: pointer;
+    border: 2px solid var(--strong-cyan);
+}
+
+#num-people.error {
+    border: 2px solid #E17052;
+}
+
+.num-error {
+    color: #E17052;
+    font-weight: 700;
+    font-size: 1rem;
+    position: absolute;
+    left: 182px;
+    bottom: 72px;
+    visibility: hidden;
+}
+
+/* calculations section */
+.calculations-container {
+    background: var(--very-dark-cyan);
+    margin: 0 24px;
+    width: 327px;
+    height: 257px;
+    border-radius: 15px;
+}
+
+#reset {
+    width: 281px;
+    height: 48px;
+    background: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 0 22px;
+    opacity: 0.35;
+}
+
+.tip-amount-container {
+    padding: 2.3rem 1.3rem 1.2rem 1.3rem;
+}
+
+/* grid */
+.tip-amount-container, .total-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.tip-amount, .total {
+    color: white;
+    grid-area: 1/1/2/2;
+}
+
+.small-display {
+    font-size: 13px;
+    color: var(--dark-grayish-cyan);
+    grid-area: 2/1/3/2;
+}
+
+#tip-value, #total-value {
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--strong-cyan);
+    grid-area: 1/2/3/3;
+    justify-self: end;
+}
+
+/* Footer */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 20px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/******** Desktop Layout */
+
+@media (min-width: 1080px) {
+    .calculator-container {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+        width: 920px;
+        height: 481px;
+        border-radius: 25px;
+        padding: 0;
+    }
+
+    .inputs-container {
+        width: 379px;
+        height: 388px;
+        margin: 0;
+    }
+
+    .percent-button, #custom {
+        width: 117px;
+    }
+
+    #bill, #num-people {
+        width: 379px;
+    }
+
+    .num-error {
+        left: 244px;
+        bottom: 11px;
+    }
+
+    .calculator-container {
+        width: 413px;
+        height: 417px;
+        margin: 0;
+        padding: 0;
+        align-self: center;
+        position: relative;
+    }
+
+    #tip-value, #total-value {
+        font-size: 48px;
+    }
+
+    #reset {
+        width: 333px;
+        position: relative;
+        top: 101px;
+        left: 18px;
+    }
+}
