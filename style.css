@@ -3,11 +3,11 @@
 /* ----------------- */
 
 :root {
-    /* primary colors */
-    --strong-cyan: hs1(172, 67%, 45%);
+    /* primary colors*/
+    --strong-cyan: hsl(172, 67%, 45%);
 
     /* neutral colors */
-    --very-dark-cyan: hs1(183, 100%, 15%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
     --darker-grayish-cyan: hsl(186, 14%, 43%);
     --dark-grayish-cyan: hsl(184, 14%, 56%);
     --light-grayish-cyan: hsl(185, 41%, 84%);
@@ -37,7 +37,7 @@ h4,
 p,
 figure,
 blockquote,
-d1,
+dl,
 dd {
     margin: 0;
 }
@@ -95,7 +95,7 @@ select {
     *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 00.01ms !important;
+        transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
 }
@@ -108,7 +108,7 @@ header img {
 }
 
 .calculator-container {
-    background: honeydew;
+    background: var(--white);
     border-radius: 25px 25px 0 0;
     width: 375px;
     margin: 0 auto;
@@ -174,7 +174,7 @@ button {
 
 .clicked {
     background: #26C2AE;
-    color: #00474B
+    color: #00474B;
 }
 
 #custom {
@@ -194,6 +194,7 @@ button {
     border: 2px solid var(--strong-cyan);
 }
 
+/* error: can't be zero */
 #num-people.error {
     border: 2px solid #E17052;
 }
@@ -233,6 +234,10 @@ button {
     padding: 2.3rem 1.3rem 1.2rem 1.3rem;
 }
 
+.total-container {
+    padding: 0 1.3rem 1.9rem 1.3rem;
+}
+
 /* grid */
 .tip-amount-container, .total-container {
     display: grid;
@@ -241,7 +246,7 @@ button {
 }
 
 .tip-amount, .total {
-    color: white;
+    color: var(--white);
     grid-area: 1/1/2/2;
 }
 
@@ -303,7 +308,7 @@ button {
         bottom: 11px;
     }
 
-    .calculator-container {
+    .calculations-container {
         width: 413px;
         height: 417px;
         margin: 0;
