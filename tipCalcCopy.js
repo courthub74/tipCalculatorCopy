@@ -39,5 +39,39 @@ for (let button of buttons) {
 
          /* divide totalTip by numOfPeople to get total tip per person */
          const tipPerPerson = (Math.trunc((totalTip / numPeople)*100)) / 100;
+
+         if(tipDisplay.innerText === 'NaN') {
+             tipDisplay.innerText = '0.00'
+         }
+         //get the total bill per person
+         const totalPerPerson = (billValue / numOfPeople.value).toFixed(2);
+
+         //toggling error styling
+         if (numOfPeople.value = '') {
+             numOfPeople.classList.add('error');
+             headingError.style.visibility = 'visible';
+             resetButton.style.opacity = '0.35';
+             tipDisplay.innerText = '0.00';
+             totalDisplay.innerText = '0.00';
+         } else if (numOfPeople.value !== '') {
+             numOfPeople.classList.remove('error');
+             headingError.style.visibility = 'hidden';
+             reset.style.opacity = '1';
+             reset.style.cursor = 'pointer';
+         }
+
+         //update tip amount per person in calculation display
+         tipDisplay.innerText = tipPerPerson;
+
+         //update the total per person in calculation display
+         totalDisplay.innerText = totalPerPerson;
+
+         if (tipDisplay.innerText === 'NaN' | totalDisplay.innerText === 'infinity'){
+             tipDisplay.innerText = '0.00'
+         }
+         if (tipDisplay.innerText === 'Infinity' | totalDisplay.innerText === 'NaN'){
+             tipDisplay.innerText = '0.00'
+         }
     })
 }
+
