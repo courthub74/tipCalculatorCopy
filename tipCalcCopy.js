@@ -75,3 +75,53 @@ for (let button of buttons) {
     })
 }
 
+/* get the value from the custom input */
+
+const customButtonEvents = function() {
+    const customValue = (parseFloat(customButton.value, 10) * 0.01);
+    const billValue = parseFloat(bill.value, 10);
+    const numPeople = parseInt(numOfPeople.value, 10);
+    const totalTip = customValue * billValue;
+    const tipPerPerson = (Math.trunc((totalTip / numOfPeople) * 100)) / 100;
+    const totalPerPerson = (billValue / numOfPeople.value);
+
+    if (numOfPeople.value === '') {
+        numOfPeople.classList.add('error');
+        headingError.style.visibility = 'visible';
+        reset.style.opacity = '0.35';
+
+    } else if (numOfPeople.value !== '') {
+        numOfPeople.classList.remove('error');
+        headingError.style.visibility = 'hidden';
+        reset.style.opacity = '1';
+        reset.style.cursor = 'pointer';
+    }
+
+    tipDisplay.innerText = tipPerPerson;
+    totalDisplay.innerText = totalPerPerson;
+
+    if (tipDisplay.innerText === 'NaN' | totalDisplay.innerText === 'Infinity'){
+        tipDisplay.innerText = '0.00'
+    }
+    if (totalDisplay.innerText === 'Infinity' | totalDisplay.innerText === 'NaN'){
+        tipDisplay.innerText = '0.00'
+    }
+}
+
+//add event listener, pass in the event type, and call the function
+customButton.addEventListener('input', customButtonEvents);
+customButton.addEventListener('click', customButtonEvents);
+
+//reset all values, display to 0, and styles
+resetButton.addEventListener('click', function() {
+    document.getElementById('tip-value').innerText = '0.00'
+    document.getElementById('total-value').innerText = '0.00'
+    numOfPeople.classList.remove('error');
+    headingError.style.visibility = 'hidden';
+    reset.style.opacity = '0.35';
+    reset.style.cursor = 'default';
+    for (let button of buttons) {
+        button.classList.remove('clicked')
+    }
+})
+
